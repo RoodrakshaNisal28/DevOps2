@@ -1,0 +1,26 @@
+#Simple Linear Regression
+#importng the Libraries
+#importing the libraries
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+#importing the dataset
+dataset= pd.read_csv('Salary_data.csv')
+x=dataset.iloc[:,:-1].values
+y=dataset.iloc[:,:-1].values
+
+#splitying the dataset into the traing set
+from sklear.model_selection import train_test_split
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=)
+
+from sklearn.linear_model import LineraRegression 
+sim_reg = LinearRegression()
+sim_reg.fit(X_train,y_train)
+
+y_pred = sim_reg.predict(X_test)
+
+plt.scatter(X_train,y_train, color='red')
+plt.plot(X_train,sim_reg.predict(x_train),color='blue')
